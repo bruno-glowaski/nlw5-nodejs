@@ -77,6 +77,5 @@
     ],
     "workbench.productIconTheme": "fluent-icons",
     "terminal.integrated.showExitAlert": false,
-    "splitHTMLAttributes.closingBracketOnNewLine": true,
-    "window.zoomLevel": 1
+    "splitHTMLAttributes.closingBracketOnNewLine": true
 }
