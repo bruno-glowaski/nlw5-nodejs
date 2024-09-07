@@ -28,6 +28,7 @@ io.on('connect', (socket) => {
       })
     } else {
       connection.socket_id = socket_id;
+      connection.admin_id = null;
       await connections.create(connection);
     }
 
