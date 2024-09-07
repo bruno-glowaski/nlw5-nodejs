@@ -25,6 +25,10 @@ app.get('/', (request, response) => {
   return response.render('html/client.html');
 });
 
+app.get('/admin', (request, response) => {
+  return response.render('html/admin.html');
+});
+
 app.use(express.json());        // Parser do corpo da requisição HTTP
 app.use(routes);                // Rotas HTTP
 
