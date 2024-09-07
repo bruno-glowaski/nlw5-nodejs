@@ -20,6 +20,27 @@ class SettingsController {
       })
     }
   }
+
+  async findByUsername(request: Request, response: Response) {
+    const { username } = request.params;
+
+    const service = new SettingsService();
+
+    const settings = await service.findByUsername(username);
+
+    return response.json(settings);
+  }
+
+  async update(request: Request, response: Response): Promise<Response> {
+    const { username } = request.params;
+    const { chat } = request.body;
+
+    const service = new SettingsService();
+
+    const settings = await service.update(username, chat);
+
+    return response.json(settings);
+  }
 }
 
 export { SettingsController }

@@ -33,6 +33,24 @@ class SettingsService {
 
     return settings;
   }
+
+  async findByUsername(username: string) {
+    const setting = await this.repository.findOne({
+      username,
+    });
+
+    return setting;
+  }
+
+  async update(username: string, chat: boolean) {
+    const settings = await this.repository.createQueryBuilder()
+      .update(Setting)
+      .set({ chat })
+      .where("username = :username", {
+        username
+      })
+      .execute();
+  }
 }
 
 export { SettingsService };
